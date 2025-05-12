@@ -1,7 +1,7 @@
 import { ListaProvider } from "./components/lista";
 import Agregar from "./components/agregar";
 import Listado from "./components/listar/listado";
-import Favoritos from "./components/favoritos";
+import Favoritos from "./components/listar/favoritos";
 
 export default function App() {
   return (
