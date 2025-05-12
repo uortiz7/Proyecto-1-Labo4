@@ -8,7 +8,9 @@ export default function Favoritos() {
   return (
     <section
       id="favoritos"
-      className="px-6 bg-black/80 flex flex-col items-center justify-center"
+      className="px-6 bg-black/80 
+      flex flex-col items-center justify-center 
+      border-r border-t border-r-cyan-400 border-t-cyan-400"
     >
       <h2 className="text-2xl">Favoritos</h2>
       <div className="w-full mt-7 flex gap-6 overflow-x-auto pb-3">

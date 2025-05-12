@@ -26,7 +26,7 @@ export default function Listado() {
         />
       )}
       {lista.length > 0 ? (
-        <ul className="overflow-y-auto border border-blue-300 p-2 rounded">
+        <ul className="overflow-y-auto border border-cyan-400 p-2 rounded">
           {lista.map((video) => {
             return <ElementoLista video={video} />;
           })}
