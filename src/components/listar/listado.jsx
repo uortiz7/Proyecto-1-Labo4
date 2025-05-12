@@ -7,11 +7,15 @@ export default function Listado() {
   const [busqueda, setBusqueda] = useState("");
   console.log(busqueda);
 
+  const listaFiltrada = lista.filter((video) =>
+    video.nombre?.toLowerCase().includes(busqueda.toLowerCase())
+  );
+
   return (
     <section
       id="listado"
       className="
-        px-5
+        h-full px-5
         flex flex-col justify-center gap-2
         bg-black/50
       "
@@ -21,17 +25,18 @@ export default function Listado() {
         <input
           type="text"
           value={busqueda}
-          onChange={(e) => setBusqueda(e.value)}
+          onChange={(e) => setBusqueda(e.target.value)}
           placeholder="Buscar Canción..."
         />
       )}
-      {lista.length > 0 ? (
+      {listaFiltrada.length > 0 && (
         <ul className="overflow-y-auto border border-cyan-400 p-2 rounded">
-          {lista.map((video) => {
+          {listaFiltrada.map((video) => {
             return <ElementoLista video={video} />;
           })}
         </ul>
-      ) : (
+      )}
+      {lista.length < 1 && (
         <p className="text-xs text-cyan-200">No hay videos agregados aún</p>
       )}
     </section>
