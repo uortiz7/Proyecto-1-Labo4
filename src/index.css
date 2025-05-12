@@ -43,9 +43,8 @@ button:hover {
 }
 
 article {
-  min-width: 150px;
-  width: 100%;
-  max-width: 250px;
+  width: 250px;
+  min-width: 250px;
   border-radius: 10px;
   display: flex;
   gap: 10px;
@@ -86,12 +85,17 @@ article {
   #agregar {
     align-items: center;
   }
-  form{
+  form {
     flex-direction: column;
     align-items: start;
   }
-  button{
+  button {
     padding: 0.5rem;
     font-size: small;
+  }
+  article {
+    min-width: 200px;
+    width: 200px;
+    max-width: 200px;
   }
 }
