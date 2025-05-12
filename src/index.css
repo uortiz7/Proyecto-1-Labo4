@@ -62,10 +62,10 @@ article {
   grid-area: 1/1/2/6;
 }
 #listado {
-  grid-area: 2/1/6/3;
+  grid-area: 2/3/6/6;
 }
 #favoritos {
-  grid-area: 2/3/6/6;
+  grid-area: 2/1/6/3;
 }
 
 @media (width < 870px) {
@@ -88,6 +88,9 @@ article {
   form {
     flex-direction: column;
     align-items: start;
+  }
+  #listado {
+    padding: 1rem;
   }
   button {
     padding: 0.5rem;

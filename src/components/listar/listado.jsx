@@ -25,12 +25,14 @@ export default function Listado() {
           placeholder="Buscar Canción..."
         />
       )}
-      {lista.length > 0 && (
+      {lista.length > 0 ? (
         <ul className="overflow-y-auto border border-blue-300 p-2 rounded">
           {lista.map((video) => {
             return <ElementoLista video={video} />;
           })}
         </ul>
+      ) : (
+        <p className="text-xs text-cyan-200">No hay videos agregados aún</p>
       )}
     </section>
   );

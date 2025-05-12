@@ -31,7 +31,7 @@ export default function Favoritos() {
             </article>
           ))
         ) : (
-          <p className="text-sm">No hay favoritos aún.</p>
+          <p className="text-xs text-cyan-200">No hay favoritos aún</p>
         )}
       </div>
     </section>
