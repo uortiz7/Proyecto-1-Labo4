@@ -21,7 +21,6 @@ export default function Favoritos() {
               <img
                 src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                 alt={`Miniatura de ${video.nombre}`}
-                className=""
               />
               <div className="p-2 flex flex-col">
                 <span className="text-xl font-bold">{video.nombre}</span>
