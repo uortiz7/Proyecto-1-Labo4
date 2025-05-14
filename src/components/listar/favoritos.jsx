@@ -18,7 +18,7 @@ export default function Favoritos() {
           favoritos.map((video) => (
             <article
               key={video.id}
-              className="flex flex-col border border-blue-300 justify-between rounded shadow overflow-hidden"
+              className="flex flex-col border border-blue-400 justify-between rounded shadow overflow-hidden"
             >
               <img
                 src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}

@@ -5,9 +5,13 @@ import ElementoLista from "./elemento-lista";
 export default function Listado() {
   const { lista } = useLista();
   const [busqueda, setBusqueda] = useState("");
-  console.log(busqueda);
+  const [isOrdenar, setIsOrdenar] = useState(false);
 
-  const listaFiltrada = lista.filter((video) =>
+  const listaOrdenada = isOrdenar
+    ? [...lista].sort((a, b) => b.contador - a.contador)
+    : lista;
+
+  const listaFiltrada = listaOrdenada.filter((video) =>
     video.nombre?.toLowerCase().includes(busqueda.toLowerCase())
   );
 
@@ -20,7 +24,15 @@ export default function Listado() {
         bg-black/50
       "
     >
-      <h2 className="text-lg">Listado de Videos</h2>
+      <div className="flex justify-between">
+        <h2 className="text-lg">Listado de Videos</h2>
+        {lista.length > 1 && (
+          <button onClick={() => setIsOrdenar(!isOrdenar)}>
+            {isOrdenar ? "Desordenar" : "Ordenar"}
+          </button>
+        )}
+      </div>
+
       {lista.length > 1 && (
         <input
           type="text"
@@ -29,13 +41,17 @@ export default function Listado() {
           placeholder="Buscar Canción..."
         />
       )}
-      {listaFiltrada.length > 0 && (
+
+      {listaFiltrada.length > 0 ? (
         <ul className="overflow-y-auto border border-cyan-400 p-2 rounded">
           {listaFiltrada.map((video) => {
             return <ElementoLista video={video} />;
           })}
         </ul>
+      ) : (
+        <p className="text-xs text-cyan-200">No se encontraron resultados</p>
       )}
+
       {lista.length < 1 && (
         <p className="text-xs text-cyan-200">No hay videos agregados aún</p>
       )}
