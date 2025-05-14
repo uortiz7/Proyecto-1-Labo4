@@ -24,7 +24,7 @@ export default function Listado() {
         bg-black/50
       "
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap">
         <h2 className="text-lg">Listado de Videos</h2>
         {lista.length > 1 && (
           <button onClick={() => setIsOrdenar(!isOrdenar)}>
