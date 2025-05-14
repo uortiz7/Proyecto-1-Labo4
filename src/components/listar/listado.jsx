@@ -42,14 +42,12 @@ export default function Listado() {
         />
       )}
 
-      {listaFiltrada.length > 0 ? (
+      {listaFiltrada.length > 0 && (
         <ul className="overflow-y-auto border border-cyan-400 p-2 rounded">
           {listaFiltrada.map((video) => {
             return <ElementoLista video={video} />;
           })}
         </ul>
-      ) : (
-        <p className="text-xs text-cyan-200">No se encontraron resultados</p>
       )}
 
       {lista.length < 1 && (

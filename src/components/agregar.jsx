@@ -29,9 +29,12 @@ export default function Agregar() {
 
         if (url.hostname.includes("youtube")) {
           const id = url.searchParams.get("v");
-
           if (id) {
-            return id;
+            if (!lista.some((video) => video.id === id)) {
+              return id;
+            } else {
+              alert("Video ya agregado");
+            }
           } else {
             alert("El link debe contener un video válido");
           }
